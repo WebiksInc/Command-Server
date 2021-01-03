@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Apllications Example</title>
+</head>
+
+<script type="text/javascript">
+    performeGet = (el) => {
+        url = el.getAttribute("href")
+        fetch(url);
+    }
+</script>
+
+
+<body>
+
+    <div>
+        <h1>GET '/raw?path=...?args=...'</h1>
+        <h4>path = path to executable file</h4>
+        <h4>args = arguments for this file (as string)</h4>
+
+        <ul>
+
+            <li>
+                <p>/raw?path=notepad.exe&args=/A C:\Users\Public\example.txt</p>
+                <button onclick="performeGet(this)"
+                    href='http://localhost:3000/raw?path=notepad.exe&args=/A C:\Users\Public\example.txt'>
+                    open notepad with C:\Users\Public\example.txt
+                </button>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div>
+        <h1>GET '/run/name?arg1=...?arg2=...?arg3=...'</h1>
+        <h4>name = name of action</h4>
+        <h4>arg_i = arguments for this action (as implement in server)</h4>
+
+        <ul>
+
+            <li>
+                <p>/run/openNotepad?option=A&path=C:\Users\Public\example.txt</p>
+                <button onclick="performeGet(this)"
+                    href='http://localhost:3000/run/openNotepad?option=A&path=C:\Users\Public\example.txt'>
+                    open notepad with C:\Users\Public\example.txt
+                </button>
+            </li>
+
+            <li>
+                <p>/run/openFileExplorer?directory_path=C:\Users</p>
+                <button onclick="performeGet(this)"
+                    href='http://localhost:3000/run/openFileExplorer?directory_path=C:\Users'>
+                    open file explorer in C:\Users
+                </button>
+            </li>
+
+        </ul>
+
+    </div>
+
+</body>
+
+</html>
