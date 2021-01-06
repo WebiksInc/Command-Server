@@ -21,10 +21,9 @@ To make sure you have them available on your machine, run the following commands
 ```bash
 > npm install
 ```
-### Start node server on machine boot:
-- Create a shortcut to the `src/start.bat` file.
-- Open `Autostart` folder (hit `Windows`+`R` to open the "Run" box, type `shell:startup` and then press `Enter`).
-- Move the `src/start.bat` shortcut to `Autostart` folder. 
+### Start node server on machine boot as a windows service:
+- cd src
+- node service.js <Service Name> <Service Description> (for example node service.js CommandService CommandServiceDescription)
 
 ## Running the Demo:
 - Move the `demo/example.txt` file to the `C:\Users\Public` folder.
